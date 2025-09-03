@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/BackgroundColor"
+    android:paddingVertical="16dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/heading"
+        app:layout_constraintBottom_toTopOf="@id/username_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:fontFamily="@font/montserratbold"
+        android:layout_margin="10dp"
+        android:text="Enter Username And Password \n To Confirm Your Identity"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_layout"
+        android:layout_width="0dp"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeColor="@color/StrokeColor"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/baseline_person_24"
+        app:startIconTint="@color/TextColor"
+        app:boxCornerRadiusBottomStart="10dp"
+        android:layout_marginHorizontal="15dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/delete_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:textColor="@color/TextColor"
+            android:textColorHint="@color/TextColor"
+            android:hint="Enter Username"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeColor="@color/StrokeColor"
+        app:layout_constraintTop_toBottomOf="@id/username_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="15dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxBackgroundMode="outline"
+        app:startIconDrawable="@drawable/baseline_key_24"
+        app:startIconTint="@color/TextColor"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/delete_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+            android:hint="Enter Password"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delete_Account_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/ButtonColor"
+        android:text="Delete Account"
+        android:textAllCaps="false"
+        android:textColor="@color/buttontextcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_layout"
+        app:strokeColor="@color/StrokeColor"
+        app:strokeWidth="4dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancel"
+        android:layout_width="0dp"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@id/delete_Account_button"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/password_layout"
+        app:layout_constraintEnd_toEndOf="@id/password_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/buttontextcolor"
+        android:backgroundTint="@color/ButtonColor"
+        android:text="Cancel"
+        app:strokeColor="@color/StrokeColor"
+        app:strokeWidth="4dp"
+
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

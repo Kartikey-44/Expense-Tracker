@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/BackgroundColor"
+    android:padding="20dp" >
+
+    <TextView
+        android:id="@+id/setupin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Set Up PIN"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/instruction"
+        android:fontFamily="@font/montserratbold"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/instruction"
+        android:text="It Will Asked Everytime You Open App"
+        android:textSize="20sp"
+        android:fontFamily="@font/robotobold"
+        app:layout_constraintTop_toBottomOf="@id/setupin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:layout_marginVertical="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pin_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/instruction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:startIconDrawable="@drawable/baseline_key_24"
+        app:startIconTint="@color/TextColor"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxStrokeColor="@color/StrokeColor"
+        app:endIconMode="password_toggle"
+        android:layout_marginVertical="20dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeWidth="2dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pin_edditext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter The Pin"
+            android:textColor="@color/TextColor"
+            android:textSize="18sp"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/TextColor"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/confirm_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pin_container"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/HeadingColor"
+        android:textSize="15sp"
+        android:fontFamily="@font/robotobold"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

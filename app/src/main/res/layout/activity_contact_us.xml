@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Contact_Us">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/contacttoplayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="25dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+
+        app:cardElevation="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/BackgroundColor">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/contact_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserratbold"
+            android:gravity="center"
+           android:layout_marginVertical="20dp"
+
+            android:layout_gravity="center"
+            android:text="Welome User\n We Are 24*7 Available To Help You"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/contact"
+        android:layout_width="0dp"
+        app:cardElevation="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contacttoplayout"
+       android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/BackgroundColor"
+        android:padding="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:id="@+id/contactus_heading"
+                android:layout_height="wrap_content"
+                android:elevation="14dp"
+                android:fontFamily="@font/montserratbold"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/customer_service__1_1"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/TextColor"
+                android:padding="10dp"
+                android:background="@drawable/bg_rounded_text"
+                android:textColor="@color/TextColor"
+                android:layout_margin="15dp"
+                android:text="Contact Us From Following Ways"
+                android:textSize="15sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/call_us"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/call_us"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="4dp"
+                android:fontFamily="@font/robotomedium"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/phone_call"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/TextColor"
+                android:text="Call Us"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contactus_heading"
+                android:padding="10dp"
+                android:background="@drawable/bg_rounded_text"
+                android:textSize="20sp"
+                android:textColor="@color/TextColor"
+                android:layout_margin="15dp"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/whatsapp_us"
+                android:drawableTint="@color/TextColor"
+                android:drawableStart="@drawable/whatsapp__2_"
+                android:layout_width="0dp"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/robotomedium"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:elevation="4dp"
+                android:foreground="?attr/selectableItemBackground"
+                app:layout_constraintTop_toBottomOf="@id/call_us"
+                app:layout_constraintStart_toStartOf="parent"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/TextColor"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_rounded_text"
+                android:text="WhatsApp Us"
+                android:lineHeight="24sp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:id="@+id/mail_us"
+                android:fontFamily="@font/robotomedium"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/gmail"
+                android:drawableTint="@color/TextColor"
+                android:clickable="true"
+                android:layout_margin="15dp"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp"
+                android:background="@drawable/bg_rounded_text"
+                android:lineHeight="24sp"
+                android:padding="10dp"
+                android:focusable="true"
+                android:elevation="4dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Mail Us"
+                android:textColor="@color/TextColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/whatsapp_us" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/discord_us"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_margin="15dp"
+                android:drawableStart="@drawable/discord"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_rounded_text"
+                android:lineHeight="24sp"
+                android:drawableTint="@color/TextColor"
+                android:padding="10dp"
+                android:fontFamily="@font/robotomedium"
+                android:focusable="true"
+                android:elevation="4dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="Discord"
+                android:textColor="@color/TextColor"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mail_us" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+    <include
+        layout="@layout/activity_bottom_menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

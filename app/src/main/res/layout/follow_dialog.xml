@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <com.google.android.material.textview.MaterialTextView
+           android:layout_width="0dp"
+           android:layout_margin="20dp"
+           android:layout_height="wrap_content"
+           app:fontFamily="@font/robotomedium"
+           android:elevation="10dp"
+           android:drawableStart="@drawable/instagram"
+           android:background="@drawable/bg_rounded_text"
+           android:foreground="?attr/selectableItemBackground"
+           android:textSize="20sp"
+           android:text="Follow Us On Instagram"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+
+           />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

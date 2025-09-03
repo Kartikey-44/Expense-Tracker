@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_card"
+    android:layout_width="match_parent"
+    app:cardElevation="14dp"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginBottom="20dp"
+    app:cardCornerRadius="24dp"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:strokeColor="?attr/colorOutline"
+    app:strokeWidth="2dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="24dp">
+
+        <!-- View Transactions -->
+        <ImageView
+            android:id="@+id/view_transaction"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/file"
+            app:tint="@color/TextColor"
+            android:contentDescription="View Transactions"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <ImageView
+            android:id="@+id/dashboard"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/dashboard"
+            app:tint="@color/TextColor"
+            android:contentDescription="View Transactions"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@id/addtask"
+            app:layout_constraintStart_toEndOf="@id/view_transaction"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Add Task (center primary action) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addtask"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:contentDescription="Add Task"
+            app:srcCompat="@drawable/add"
+            app:tint="?attr/colorOnPrimary"
+            app:backgroundTint="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Profile -->
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/user"
+            app:tint="@color/TextColor"
+            android:contentDescription="Profile"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@id/contact_us"
+            app:layout_constraintStart_toEndOf="@id/addtask"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <ImageView
+            android:id="@+id/contact_us"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/customer_service__1_"
+            app:tint="@color/TextColor"
+            android:contentDescription="Profile"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

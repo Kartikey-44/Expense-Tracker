@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/category_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Category"
+        android:textColor="@color/TextColor"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserratbold"/>
+
+    <TextView
+        android:id="@+id/category_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹ 0.00"
+        android:textColor="@color/HeadingColor"
+        android:textSize="16sp"
+        android:fontFamily="@font/robotobold"/>
+</LinearLayout>

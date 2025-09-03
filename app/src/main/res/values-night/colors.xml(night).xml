@@ -1,0 +1,27 @@
+<resources>
+    <color name="BackgroundColor">#121212</color>
+    <color name="CardBackground">#1E1E1E</color>
+    <color name="StrokeColor">#BDBDBD</color>
+    <color name="TextColor">#E0E0E0</color>
+
+    <!-- Buttons -->
+    <color name="ButtonColor">#F1F1F1</color>
+    <color name="buttontextcolor">#212121</color>
+    <color name="Bottommenucolor">#F1F1F1</color>
+
+    <color name="HeadingColor">#E0E0E0</color>
+    <!-- Primary -->
+    <color name="md_primary">#D0BCFF</color>
+    <color name="md_on_primary">#381E72</color>
+    <color name="md_primary_container">#4F378B</color>
+    <color name="md_on_primary_container">#EADDFF</color>
+
+    <!-- Material Neutrals -->
+    <color name="md_bg">#121316</color>
+    <color name="md_on_bg">#E6E1E5</color>
+    <color name="md_surface">#1A1B1F</color>
+    <color name="md_surface_variant">#49454F</color>
+    <color name="md_on_surface">#E6E1E5</color>
+    <color name="md_on_surface_variant">#C9C5CA</color>
+    <color name="md_outline">#8C8891</color>
+</resources>
