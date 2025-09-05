@@ -112,7 +112,7 @@ class SplashActivity : AppCompatActivity() {
                         startActivity(Intent(this, Home_Screen::class.java))
                         finish()
                     }
-                }, 600)
+                }, 200)
             } else {
                 chances--
                 dialogBinding.instruction.text = "Incorrect PIN. $chances chances remaining."
@@ -212,7 +212,7 @@ class SplashActivity : AppCompatActivity() {
                     {
                         dialog.dismiss()
                         success_dialog("Pin Confirmed")
-                    },2000
+                    },500
                 )
 
 

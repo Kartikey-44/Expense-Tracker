@@ -178,7 +178,7 @@
                 android:focusable="true"
                 android:elevation="4dp"
                 android:foreground="?attr/selectableItemBackground"
-                android:text="Erase All Data Of App"
+                android:text="Erase All My Expenses"
                 android:textColor="@color/TextColor"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"

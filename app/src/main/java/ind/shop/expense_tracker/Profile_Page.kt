@@ -96,7 +96,7 @@ class Profile_Page : BaseActivity() {
         }
 
         // Delete account
-        binding.deleteContainer.setOnClickListener { delete_account() }
+
 
         // Erase all local data (Room) behind a PIN
         db = Expense_List_Database(this)
@@ -107,6 +107,15 @@ class Profile_Page : BaseActivity() {
                     Snackbar.make(binding.root, "All local data erased", Snackbar.LENGTH_LONG).show()
                 }
             }
+        }
+        binding.deleteContainer.setOnClickListener {
+            checkPin { isCorrect ->
+                if (isCorrect) {
+                    db.clearAllTables()
+                    delete_account()
+                }
+            }
+
         }
 
         // Image persistence
@@ -207,17 +216,20 @@ class Profile_Page : BaseActivity() {
         )
     }
 
-    private fun success_dialog(animation: String, message: String) {
+    private fun success_dialog() {
         val dialog = Dialog(this)
         val dialogBinding = SuccessDialogBinding.inflate(layoutInflater)
         dialog.setContentView(dialogBinding.root)
         dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_background))
-        dialog.window?.setLayout(1000, 800)
-        dialogBinding.sucessDialogLottie.setAnimation(animation)
+        dialog.window?.setLayout(1000, 1000)
+        dialogBinding.sucessDialogLottie.setAnimation("DeleteBin.json")
         dialogBinding.sucessDialogLottie.playAnimation()
-        dialogBinding.textonsucess.text = message
+        dialogBinding.textonsucess.text = "Account Deleted \n Thank You For Using The App"
         dialog.show()
-        dialogDismiss(dialog)
+        dialog.setOnDismissListener {
+            finish()
+            finishAffinity()
+        }
     }
 
     private fun dialogDismiss(dialog: Dialog) {
@@ -252,27 +264,25 @@ class Profile_Page : BaseActivity() {
     }
 
     private fun delete_account() {
-        val dialog = Dialog(this)
-        val dialogBinding = ConfirmationDialogBinding.inflate(layoutInflater)
-        dialog.setContentView(dialogBinding.root)
-        dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_background))
-        dialog.window?.setLayout(900, 1000)
-        dialog.show()
+        val prefs=getSharedPreferences("app_prefs", MODE_PRIVATE)
+            .edit().putBoolean("firstopen", true).apply()
+        val activityprefs = getSharedPreferences("firstopenctivity", MODE_PRIVATE)
+            .edit().putBoolean("first",true).apply()
 
-        dialogBinding.deleteAccountButton.setOnClickListener {
-            loading_dialog("Checking Credentials", 2000)
+        val nameprefs=getSharedPreferences(PREFS_USERNAME,MODE_PRIVATE)
+            .edit().putString(KEY_USER_NAME,"").apply()
+        val profileimageprefs=getSharedPreferences("imagepref",MODE_PRIVATE)
+            .edit().putString("image",null).apply()
+        val boolpref=getSharedPreferences("app_prefs",MODE_PRIVATE).getBoolean("firstopen",false)
 
-            val username = dialogBinding.deleteUsername.text.toString().trim()
-            val password = dialogBinding.deletePassword.text.toString()
+        if(boolpref){
 
-            if (username.isEmpty() || password.isEmpty()) {
-                failDialog("Failed.json", "Any Field Cannot Be Empty", 4000)
-                return@setOnClickListener
-            }
-
-
+            success_dialog()
         }
 
-        dialogBinding.cancel.setOnClickListener { dialog.dismiss() }
+        else{
+            failDialog("Failed.json","Something Went Wrong",3000)
+        }
+
     }
 }

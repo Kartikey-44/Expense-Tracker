@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.animation.Animation
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -107,12 +108,7 @@ class Add_Edit_Page : BaseActivity() {
                             remarkText
                         )
                     )
-                    successDialog("Expense Added")
-                    Handler(Looper.getMainLooper()).postDelayed(
-                        {
-                            startActivity(Intent(applicationContext, Home_Screen::class.java ))
-                        },3000
-                    )
+                    successDialog("Success.json","Expense Added")
                 }
             }
         }
@@ -125,15 +121,20 @@ class Add_Edit_Page : BaseActivity() {
         }, 4000)
     }
 
-    private fun successDialog(message: String) {
+    private fun successDialog(animation: String, message: String) {
         val dialog = Dialog(this)
         val dialogBinding = SuccessDialogBinding.inflate(layoutInflater)
         dialog.setContentView(dialogBinding.root)
         dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialog_background))
         dialog.window?.setLayout(700, 800)
         dialogBinding.textonsucess.text = message
+        dialogBinding.sucessDialogLottie.setAnimation(animation)
+        dialogBinding.sucessDialogLottie.playAnimation()
+        dialogBinding.sucessDialogLottie.playAnimation()
         dialog.show()
-        dialogDismiss(dialog)
+        dialog.setOnDismissListener {
+            startActivity(Intent(applicationContext, Home_Screen::class.java))
+        }
     }
 
     private fun failDialog(animation: String, message: String) {
@@ -246,10 +247,8 @@ class Add_Edit_Page : BaseActivity() {
                                 remarkText
                             )
                         )
-                        successDialog("Task Is Edited")
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            startActivity(Intent(applicationContext, Home_Screen::class.java))
-                        }, 3000)
+                        successDialog("Success.json","Expense Is Edited")
+
                     }
                 }
             }
@@ -263,12 +262,8 @@ class Add_Edit_Page : BaseActivity() {
                 val id = intent.getIntExtra(Expense_ID, -1)
                 if (id != -1) {
                     db.delete_expense(id)
-                    failDialog("DeleteBin.json", "Expense Deleted")
-                    Handler(Looper.getMainLooper()).postDelayed(
-                        {
-                            startActivity(Intent(applicationContext, Home_Screen::class.java))
-                        },3000
-                    )
+                   successDialog("DeleteBin.json","Expense Deleted")
+
 
                 } else {
                     failDialog("Failed.json", "Missing Expense ID")
